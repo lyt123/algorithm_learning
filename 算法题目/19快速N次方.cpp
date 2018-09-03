@@ -1,28 +1,28 @@
-//#include <iostream>
-//using namespace std;
-//int gg = 5;
-//int my_func(int fd, int events, void *arg) {
-//	gg = 3;
-//	return fd;
-//}
-//
-//struct myevent_s {
-//	int fd;                 //cfd listenfd
-//	int events;             //EPOLLIN  EPLLOUT
-//	void *arg;              //指向自己结构体指针
-//	int(*my_func)(int fd, int events, void *arg);
-//	int status;
-//	int len;
-//	long last_active;
-//};
-//
-//int main()
-//{
-//	myevent_s s;
-//	s.fd = 3;
-//	int res;
-//	res = *(s.my_func);
-//	cout << gg << endl;
-//	system("pause");
-//	return 0;
-//}
+#include <iostream>
+using namespace std;
+int getPower(int k, int N) {
+	// write code here
+	if (k == 0)
+		return 0;
+	if (k == 1 || N == 0)
+		return 1;
+	long res = 1;
+	long temp = k;
+	do {
+		if ((N & 1) == 1) {
+			res *= temp;
+		}
+		temp = temp*temp;
+		N >>= 1;
+		temp %= 1000000007;
+		res %= 1000000007;
+	} while (N > 0);
+	return res;
+}
+
+int main()
+{
+	cout << getPower(2,3) << endl;
+	system("pause");
+	return 0;
+}

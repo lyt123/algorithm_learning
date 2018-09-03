@@ -1,44 +1,51 @@
 #include <iostream>
-#include <algorithm>
 #include <string>
+#include <algorithm>
 #include <vector>
+//#include <math.h>
+#include <iomanip>
 using namespace std;
-#define BUFLEN 20
-
-/* 描述就绪文件描述符相关信息 */
-
-struct myevent_s {
-	int fd;                                                 //要监听的文件描述符
-	int events;                                             //对应的监听事件
-	void *arg;                                              //泛型参数
-	void(*call_back)(myevent_s * myevent);       //回调函数
-	int status;                                             //是否在监听:1->在红黑树上(监听), 0->不在(不监听)
-	char buf[BUFLEN];
-	int len;
-	long last_active;                                       //记录每次加入红黑树 g_efd 的时间值
-};
-void recvdata(myevent_s * myevent) {
-	cout << myevent->fd << endl;
-	return;
+int sum(int i) {
+	int res = 0;
+	int value;
+	while (i != 0) {
+		value = i % 10;
+		res += pow(value, 3);
+		i = i / 10;
+	}
+	return res;
 }
-
-
-int maintest()
+int maintettt()
 {
-	/*myevent_s * myevent = new myevent_s();
+	vector<vector<int>> data;
 
-	myevent->fd = 5;
-	myevent->call_back = recvdata;
-	myevent->events = 10;
-	myevent->arg = nullptr;
-	
-	myevent->call_back(myevent);*/
-	vector<int> a = { 2, 3, 5, 6, 7 };
-	//for()
-	//cout << ;
+	int a, b;
+	vector<int> one_layer;
+	//int count = 3;
+	while (cin >> a >> b) {
+		//a = 300; b = 380;
+		int res = 0;
+		int is_ok = 0;
+		for (int i = a; i <= b; i++) {
+			res = sum(i);
+			if (res == i) {
+				if (!is_ok) {
+					cout << res;
+					is_ok = 1;
+				}
+				else
+				{
+					cout << ' ' << res;
+				}
+			}
+		}
+		if (!is_ok)
+			cout << "no";
+		cout << endl;
 
+	}
 
-	//cout << sizeof(A) << endl;
-	system("pause");
+	//int attt = 5;
+	//system("pause");
 	return 0;
 }

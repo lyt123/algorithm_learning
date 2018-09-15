@@ -56,3 +56,5 @@ int mainsfdf()
 	//system("pause");
 	return 0;
 }
+//dp[i][j]
+//dp[i][j] = max(dp[i][j-money[i]], dp[i-1][j]); //同时如果他俩如果有人为-1，则代表兑不成功，也是失败

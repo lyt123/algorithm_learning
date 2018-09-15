@@ -8,7 +8,7 @@ using namespace std;
 
 //https://leetcode-cn.com/problems/house-robber/description/
 
-//暴力方法
+//暴力方法  通过90%
 /*int rob(vector<int>& nums) {
 int start_one = recur(nums, 0, 0);
 int start_two = recur(nums, 1, 0);
@@ -25,7 +25,7 @@ int jump_two = recur(nums, index+3, sum);
 return jump_one > jump_two ? jump_one : jump_two;
 }*/
 
-//记忆搜索  记忆搜索推导出来后  动态规划也就基本出来了
+//记忆搜索   通过100%  记忆搜索推导出来后  动态规划也就基本出来了   
 int recur(vector<int>& nums, int index, int * help) {
 	if (index >= nums.size())
 		return 0;

@@ -20,7 +20,7 @@ int getPower(int k, int N) {
 	return res;
 }
 
-int main()
+int mainwt()
 {
 	cout << getPower(2,3) << endl;
 	system("pause");

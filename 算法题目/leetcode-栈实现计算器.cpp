@@ -1,3 +1,7 @@
+/*
+下面的代码应该是跑不起来的，我写着写着发现太麻烦了，可读性太差了。
+标准答案给的是两个栈实现的，一个存运算符，一个存数字
+*/
 #include <iostream>
 #include <algorithm>
 #include <stack>

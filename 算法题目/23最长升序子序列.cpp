@@ -1,3 +1,6 @@
+/*
+这道题可以借助栈进行优化
+*/
 #include <iostream>
 #include <vector>
 using namespace std;
